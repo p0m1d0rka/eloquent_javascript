@@ -7,23 +7,18 @@
 // console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 // // → true
 let deepEqual = function(val1, val2){
-  if(typeof(val1)=='Object' && typeof(val2)=='Object' && val1!==null && val2!==null){
-    
+  if(typeof(val1)==='object' && typeof(val2)==='object' && val1!==null && val2!==null){
     for (let prop in val1) {
       if (val2.hasOwnProperty(prop)) {
         if (!deepEqual(val1.prop, val2.prop)){
-            return false; 
+          return false; 
         }
+      }else{
+        return false;
       }
-      else {
-          return false;
-      }
-      if(typeof(val1.prop)=='Object'){
-        return 
-      }
-      //console.log(`obj.${prop} = ${obj[prop]}`);
     }
+    return true
   }else{
-    return val1 == val2
+    return val1 === val2
   }
 }
