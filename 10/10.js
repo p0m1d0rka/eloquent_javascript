@@ -10,7 +10,7 @@ let deepEqual = function(val1, val2){
   if(typeof(val1)==='object' && typeof(val2)==='object' && val1!==null && val2!==null){
     for (let prop in val1) {
       if (val2.hasOwnProperty(prop)) {
-        if (!deepEqual(val1.prop, val2.prop)){
+        if (!deepEqual(val1[prop], val2[prop])){
           return false; 
         }
       }else{
