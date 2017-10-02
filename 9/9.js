@@ -36,7 +36,7 @@ let arrayToList = function(arr){
 
 let listToArray = function(list){
   if(list.rest){
-    return [list.value].concat(prep(list.rest))
+    return [list.value].concat(listToArray(list.rest))
   }else{
     return list.value
   }
